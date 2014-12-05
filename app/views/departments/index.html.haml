@@ -1,0 +1,17 @@
+-#  This file is app/views/departments/index.html.haml
+%h1 All Departments
+ 
+%table#departments
+  %thead
+    %tr
+      %th Department Name
+      %th Location
+      %th Description
+      %th More Info
+  %tbody
+    - @departments.each do |department|
+      %tr
+        %td= department.name
+        %td= department.location
+        %td= department.description
+        %td= link_to "More about #{department.name}", department_path(department)
